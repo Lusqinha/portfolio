@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="cosmico">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lucas Borges · Desenvolvedor Back-end</title>
+  <meta name="description" content="Portfólio de Lucas Borges da Silva, desenvolvedor back-end (Ruby on Rails, PHP/Laravel). ERP, APIs REST, COMEX, CRM, cobranças e automações com IA.">
+  <meta name="author" content="Lucas Borges da Silva">
+  <meta name="theme-color" content="#000014">
+
+  <link rel="canonical" href="https://lucasborges.dev.br/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lucasborges.dev.br/">
+  <meta property="og:title" content="Lucas Borges · Desenvolvedor Back-end">
+  <meta property="og:description" content="Ruby on Rails, PHP/Laravel, PostgreSQL, Redis, Sidekiq. Um portfólio com cara de 1999 e terminal de verdade.">
+  <meta property="og:image" content="https://lucasborges.dev.br/assets/apple-touch-icon.png">
+
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo" data-i18n="skip">pular para o conteúdo</a>
+
+  <marquee class="marquee" behavior="scroll" scrollamount="5" data-i18n="marquee">
+    ☆ Bem-vindo(a) ao meu portfólio! ☆
+  </marquee>
+
+  <div class="wrap">
+    <header class="site-header">
+      <img class="header-gif" src="assets/gifs/mage-greeting.gif" alt="" width="64" height="64">
+      <div>
+        <h1 class="neon title">LUCAS BORGES</h1>
+        <p class="font-fun tagline" data-i18n="tagline">Desenvolvedor Back-end · Ruby on Rails &amp; PHP</p>
+      </div>
+      <img class="header-gif flip" src="assets/gifs/mage-greeting.gif" alt="" width="64" height="64">
+    </header>
+
+    <nav class="site-nav" aria-label="principal">
+      <a href="#terminal" data-i18n="navTerminal">[ terminal ]</a>
+      <a href="#sobre" data-i18n="navSobre">[ sobre ]</a>
+      <a href="#experiencia" data-i18n="navExp">[ experiência ]</a>
+      <a href="#projetos" data-i18n="navProj">[ projetos ]</a>
+      <a href="#contato" data-i18n="navContato">[ contato ]</a>
+      <span class="nav-tools">
+        <button type="button" class="nav-btn" id="btn-lang" aria-label="mudar idioma">[ PT | <span class="dim">EN</span> ]</button>
+        <button type="button" class="nav-btn" id="btn-theme" aria-label="mudar tema">[ <span data-i18n="themeLabel">tema</span>: <span id="theme-name">cósmico</span> ]</button>
+      </span>
+    </nav>
+
+    <hr class="neon">
+
+    <!-- terminal -->
+    <section id="terminal" class="window collapsed" aria-label="terminal interativo">
+      <div class="titlebar">
+        <span class="titlebar-icon">▣</span>
+        <span class="titlebar-text">lucas@dev: ~ — bash</span>
+        <span class="titlebar-btns">
+          <button type="button" id="win-min" aria-label="minimizar">_</button>
+          <button type="button" id="win-max" aria-label="maximizar">□</button>
+          <button type="button" id="win-close" aria-label="fechar">×</button>
+        </span>
+      </div>
+      <button type="button" class="teaser" id="term-teaser" aria-controls="screen">
+        <span class="teaser-cmd"><span class="teaser-prompt">C:\&gt;</span> <span data-i18n="teaserOpen">abrir terminal interativo</span><span class="cursor blink">█</span></span>
+        <span class="teaser-hint" data-i18n="teaserHint">clique aqui, aperte <kbd>/</kbd> ou escolha um comando abaixo</span>
+      </button>
+      <div class="screen" id="screen">
+        <div id="term-out" class="term-out" role="log" aria-live="polite"></div>
+        <form id="term-form" class="prompt-line" autocomplete="off">
+          <label for="term-input" class="prompt"><span class="p-user">lucas</span><span class="p-at">@</span><span class="p-host">dev</span>:<span class="p-path" id="p-path">~</span>$</label>
+          <input id="term-input" class="term-input" type="text" spellcheck="false" autocapitalize="off" autocomplete="off" enterkeyhint="send">
+        </form>
+      </div>
+      <div class="chips" id="chips" aria-label="atalhos de comandos"></div>
+    </section>
+    <p class="term-hint font-fun" data-i18n="termHint">não curte terminal? tudo tá aqui embaixo também ↓</p>
+    <p class="reopen" hidden><button type="button" id="win-reopen" class="btn" data-i18n="reopen">[ reabrir terminal ]</button></p>
+
+    <hr class="neon">
+
+    <div class="layout" id="conteudo">
+      <main class="main-col">
+        <section id="sobre" class="panel">
+          <h2 class="panel-title" data-i18n="secSobre">// sobre</h2>
+          <p id="summary" class="lead"></p>
+          <p class="cta-row">
+            <a class="btn btn-glow" id="cta-cv" href="#" target="_blank" rel="noopener" data-i18n="ctaCv">[ ⬇ baixar cv.pdf ]</a>
+            <a class="btn" href="#contato" data-i18n="ctaContato">[ ✉ falar comigo ]</a>
+          </p>
+        </section>
+
+        <section id="experiencia" class="panel">
+          <h2 class="panel-title" data-i18n="secExp">// experiência</h2>
+          <ol class="timeline" id="exp-list"></ol>
+        </section>
+
+        <section id="projetos" class="panel">
+          <h2 class="panel-title" data-i18n="secProj">// projetos</h2>
+          <div class="cards" id="proj-list"></div>
+        </section>
+
+        <section id="formacao" class="panel">
+          <h2 class="panel-title" data-i18n="secEdu">// formação</h2>
+          <div id="edu"></div>
+        </section>
+      </main>
+
+      <aside class="side-col">
+        <section class="panel">
+          <h2 class="panel-title" data-i18n="secAutor">// autor</h2>
+          <div class="author">
+            <img src="assets/gifs/tux-working-on-pc.gif" alt="" width="72" height="72">
+            <div>
+              <p class="font-mono neon-cyan-text">Lucas Borges da Silva</p>
+              <p class="small" data-i18n="location">São Lourenço do Sul, RS · Brasil</p>
+              <p class="small dim" data-i18n="hackathon">Amante de hackathons</p>
+            </div>
+          </div>
+          <p class="status"><span class="led" aria-hidden="true"></span> <span data-i18n="status">aberto a oportunidades</span></p>
+        </section>
+
+        <section class="panel">
+          <h2 class="panel-title">// stack</h2>
+          <div id="skills"></div>
+        </section>
+
+        <section id="contato" class="panel">
+          <h2 class="panel-title" data-i18n="secContato">// contato</h2>
+          <ul class="contact-list" id="contact-list"></ul>
+        </section>
+
+        <section class="panel">
+          <h2 class="panel-title" data-i18n="secSelos">// selos</h2>
+          <div class="badges">
+            <img class="badge-88" src="assets/gifs/linux-power.gif" alt="powered by Linux" width="88" height="31">
+            <span class="badge-88 b-rails">RUBY ON<br><b>RAILS</b></span>
+            <span class="badge-88 b-cookie">NO COOKIES<br><b>NO TRACKERS</b></span>
+            <span class="badge-88 b-oss">I ♥<br><b>HACKATHONS</b></span>
+          </div>
+          <div class="counter-box">
+            <span class="small dim" data-i18n="visits">suas visitas aqui:</span>
+            <span class="counter" id="counter">000000</span>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <hr class="neon">
+
+    <footer class="site-footer">
+      <div class="webring">
+        <img src="assets/gifs/star-spinning.gif" alt="" width="20" height="20">
+        <a href="https://www.linkedin.com/in/lucas-borges-da-silva-rs/" target="_blank" rel="noopener">« linkedin</a>
+        <span class="dim">webring</span>
+        <a href="https://github.com/Lusqinha" target="_blank" rel="noopener">github »</a>
+        <img src="assets/gifs/star-spinning.gif" alt="" width="20" height="20">
+      </div>
+      <p class="small dim" data-i18n="footerKeys">atalhos: <kbd>/</kbd> foca o terminal · <kbd>Esc</kbd> sai dele</p>
+      <p class="small dim">&copy; 2026 Lucas Borges da Silva</p>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <canvas id="matrix" class="matrix" hidden></canvas>
+
+  <noscript>
+    <p class="noscript">Este portfólio precisa de JavaScript. Currículo em <a href="https://lusqinha.github.io/curriculum-vitae/">lusqinha.github.io/curriculum-vitae</a>.</p>
+  </noscript>
+
+  <script src="main.js"></script>
+</body>
+</html>
